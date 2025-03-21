@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="script.js"></script>
+<style>
+        /* Page Load Animation */
+        body {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            background: linear-gradient(135deg, #1e1e2e, #2a2a3b);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Prediction Highlight */
+        .prediction-box {
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid gold;
+            color: gold;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Hover Effects */
+        .hover-animate:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Smooth Fade-in Effect */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+</style>
+  </head>
+  <body>
+    <div class="container mx-auto p-6 sm:p-10">
+
+	  <!-- Prediction Section (Now at Top) -->
+	  <div class="glass fade-in mb-6">
+		<h2 class="text-2xl sm:text-3xl font-bold text-yellow-400 text-center mb-4">AI Prediction</h2>
+		<div class="prediction-box">
+		  <strong>Predicted Next Number:</strong> <span id="predictedNumber">Calculating...</span>
+		</div>
+	  </div>
+
+	  <!-- Recent Results Section -->
+	  <div class="glass fade-in hover-animate">
+		<h2 class="text-xl sm:text-2xl font-semibold text-blue-400 mb-4">Recent Results</h2>
+		<div class="overflow-x-auto">
+		  <table class="w-full text-left table-auto">
+			<thead>
+			  <tr>
+				<th class="px-4 py-2 text-lg">Issue Number</th>
+				<th class="px-4 py-2 text-lg">Colour</th>
+				<th class="px-4 py-2 text-lg">Number</th>
+			  </tr>
+			</thead>
+			<tbody id="recentResults">
+			  <tr>
+				<td colspan="3" class="px-4 py-2 text-center text-gray-400">Loading...</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+
+    </div>
+  </body>
+</html>
